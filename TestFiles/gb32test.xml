@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="GB2312"?>
+<Bill>
+	<Item>
+		<ItemAbbr>前泵</ItemAbbr>
+		<Item_ID>1</Item_ID>
+	</Item>
+	<Item>
+		<ItemAbbr>前泵 xxx</ItemAbbr>
+		<Item_ID>2</Item_ID>
+	</Item>
+</Bill>

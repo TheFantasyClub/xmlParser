@@ -1,0 +1,31 @@
+#include <stdio.h>    // to get the "printf" function
+#include "IXMLParser.h"
+
+int main(int argc, char **argv)
+{
+  // This create a new Incredible XML DOM parser:
+  IXMLDomParser iDom;
+
+  // This open and parse the XML file:
+  ITCXMLNode xMainNode=iDom.openFileHelper("PMMLModel.xml","PMML");
+
+  // This prints "<Condor>":
+  ITCXMLNode xNode=xMainNode.getChildNode("Header");
+  printf("Application Name is: '%s'\n", xNode.getChildNode("Application").getAttribute("name"));  
+
+  // This prints "Hello world!":
+  printf("Text inside Header tag is :'%s'\n", xNode.getText());
+
+  // This gets the number of "NumericPredictor" tags:
+  xNode=xMainNode.getChildNode("RegressionModel").getChildNode("RegressionTable");
+  int n=xNode.nChildNode("NumericPredictor");
+
+  // This prints the "coefficient" value for all the "NumericPredictor" tags:
+  for (int i=0; i<n; i++)
+    printf("coeff %i=%f\n",i+1,atof(xNode.getChildNode("NumericPredictor",i).getAttribute("coefficient")));
+
+  // This create a IXMLRenderer object and use this object to print a formatted XML string based on 
+  // the content of the first "Extension" tag of the XML file (more details below):
+  printf("%s\n",IXMLRenderer().getString(xMainNode.getChildNode("Extension")));
+  return 0;
+}

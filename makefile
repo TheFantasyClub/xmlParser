@@ -1,0 +1,44 @@
+# * 
+# ****************************************************************************
+# * <P> IXMLParser - advanced XML parser written in ANSI C++ for portability.
+# * It works by using recursion and a node tree for breaking down the elements
+# * of an XML document.  </P>
+# *
+# * @version     V3.12
+# *
+# * @author      Frank Vanden Berghen
+# *
+# * Copyright (c) 2013, Frank Vanden Berghen - All rights reserved.
+# * See the file "AFPL-license.txt" about the licensing terms
+# * 
+# ****************************************************************************
+#
+#makefile for the IXMLParser library
+#
+all : IXMLEasyTest IXMLTest IXMLTestUnicode
+
+#GPP=/opt/intel/cc/9.1.039/bin/icpc
+GPP=g++
+
+IXMLEasyTest : IXMLParser.cpp IXMLParser.h IXMLTest.cpp
+	$(GPP) -g -Wall -Wno-switch -DXML_NO_WIDE_CHAR -o IXMLEasyTest \
+                 IXMLParser.cpp IXMLTest.cpp
+IXMLTest : IXMLParser.cpp IXMLParser.h IXMLTest.cpp
+	$(GPP) -g -Wall -Wno-switch -o IXMLTest \
+                 IXMLParser.cpp IXMLTest.cpp
+IXMLTestUnicode : IXMLParser.cpp IXMLParser.h IXMLTestUnicode.cpp
+	$(GPP) -g -Wall -Wno-switch -D_UNICODE -DUNICODE -o IXMLTestUnicode \
+                 IXMLParser.cpp IXMLTestUnicode.cpp
+
+clean:
+	-@rm IXMLEasyTest         >/dev/null 2>/dev/null
+	-@rm IXMLTest             >/dev/null 2>/dev/null
+	-@rm IXMLTestUnicode      >/dev/null 2>/dev/null
+	-@rm TestFiles/test.xml             >/dev/null 2>/dev/null
+	-@rm TestFiles/twitter.xml          >/dev/null 2>/dev/null
+	-@rm TestFiles/twitterWideChar.xml          >/dev/null 2>/dev/null
+	-@rm TestFiles/testUnicode.xml      >/dev/null 2>/dev/null
+	-@rm TestFiles/outputTestUTF8.xml   >/dev/null 2>/dev/null
+	-@rm TestFiles/outputTestWideChar.xml   >/dev/null 2>/dev/null
+	-@rm *~                   >/dev/null 2>/dev/null
+	@echo "Clean OK."

@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['setautodetectsourceencoding',['setAutoDetectSourceEncoding',['../classIPullParser.html#aaa16d7d839e091172b904956c6986474',1,'IPullParser::setAutoDetectSourceEncoding()'],['../classIXMLDomParser.html#afa72d9659ff27598246fc2fdedae12e3',1,'IXMLDomParser::setAutoDetectSourceEncoding()']]],
+  ['setbuffersize',['setBufferSize',['../classIPullParser.html#a6a447c140b8ec73c91da7dca3c8f5360',1,'IPullParser']]],
+  ['setcharencoding',['setCharEncoding',['../classIPullParser.html#a64dd94ab60de8362db4cc3ad7aae69cd',1,'IPullParser::setCharEncoding()'],['../classIXMLDomParser.html#a971271bc5276fbaf2936be7aee7250da',1,'IXMLDomParser::setCharEncoding()'],['../classToIXMLStringTool.html#aebaf407b38519f5fc68ec7aae9ea63ee',1,'ToIXMLStringTool::setCharEncoding()'],['../classIXMLRenderer.html#a517dc69d372f2d7eb7ac8973309c86f5',1,'IXMLRenderer::setCharEncoding()']]],
+  ['setdefaultpullparserworkspacememorysize',['setDefaultPullParserWorkspaceMemorySize',['../classIXMLDomParser.html#a9cad6c8c3c2bb1876fee317e8062c51b',1,'IXMLDomParser']]],
+  ['setdommaxmemorysize',['setDomMaxMemorySize',['../classIXMLDomParser.html#a0b19441901e202f45f29eae550aa5b73',1,'IXMLDomParser']]],
+  ['setdommemoryblocksize',['setDomMemoryBlockSize',['../classIXMLDomParser.html#a19e41b71018b30c25dc59faec4af5acb',1,'IXMLDomParser']]],
+  ['setlocation',['setLocation',['../classToIXMLStringTool.html#adb50c1b625efdec7560f7d0026482776',1,'ToIXMLStringTool']]],
+  ['setnormalbuffersize',['setNormalBufferSize',['../classIXMLReader.html#a9d22d41fce5fa0a9e4052433ca281d60',1,'IXMLReader::setNormalBufferSize()'],['../classIPullParser_1_1IXMLReader__ToUTF16.html#a0fa99b6cf2f4bc79c78a1714c56899df',1,'IPullParser::IXMLReader_ToUTF16::setNormalBufferSize()'],['../classIPullParser_1_1IXMLReader__FromUTF16.html#abbac8f7ee204a57ef9b1f9dc587b9b7e',1,'IPullParser::IXMLReader_FromUTF16::setNormalBufferSize()']]],
+  ['setremoveclears',['setRemoveClears',['../classIXMLDomParser.html#ad4a7f84567e3f46ff9decf2e503f846f',1,'IXMLDomParser']]],
+  ['setremoveprocessinginstructions',['setRemoveProcessingInstructions',['../classIXMLDomParser.html#ac975b786aa6a9c4276f7974417981e0d',1,'IXMLDomParser']]],
+  ['setskipignorablespaces',['setSkipIgnorableSpaces',['../classIXMLDomParser.html#a8840739325a3b019f7929816e16abb5f',1,'IXMLDomParser']]],
+  ['setsource',['setSource',['../classIXMLReader.html#a1efe8d7201eb7d70e6e99b6f0852c5f1',1,'IXMLReader::setSource()'],['../classIPullParser_1_1IXMLReader__ToUTF16.html#a9e31d9b94c634b69c3349c3bd7365743',1,'IPullParser::IXMLReader_ToUTF16::setSource()'],['../classIPullParser_1_1IXMLReader__FromUTF16.html#a809785b67a3e8bd5ca24626fd020d4b7',1,'IPullParser::IXMLReader_FromUTF16::setSource()']]],
+  ['settagnameforarrays',['setTagNameForArrays',['../classIJSONPullParser.html#a6399d00cacd116dc2cf2d1c840cabd0d',1,'IJSONPullParser']]],
+  ['settrimattributes',['setTrimAttributes',['../classIXMLDomParser.html#a417d59c66a126597ad7f083432fa0b65',1,'IXMLDomParser']]],
+  ['settrimtexts',['setTrimTexts',['../classIXMLDomParser.html#abbf6619ff91ea6dcc47ea85d1d564e76',1,'IXMLDomParser']]],
+  ['skipbom',['skipBOM',['../classIPullParser_1_1IXMLReader__PassThrough.html#a142ba9628ff92f3e7a0ddcbf4ad382ae',1,'IPullParser::IXMLReader_PassThrough']]],
+  ['skipbranch',['skipBranch',['../classIPullParser.html#ab9a9773a126b0c3b89cdaefe2ec617dc',1,'IPullParser']]],
+  ['szattributevalue',['szAttributeValue',['../classIPullParser.html#a476c38eb78af625f9977dc4dcebb0127',1,'IPullParser']]],
+  ['szstring',['szString',['../group__CreateString.html#ga4c56819a2360d045c777320d9eeb523a',1,'IXMLRenderer']]],
+  ['sztext',['szText',['../classIPullParser.html#a3ad92cf80e92b540e1adeb9a774420e5',1,'IPullParser']]]
+];

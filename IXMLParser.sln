@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IXMLParser", "IXMLParser.vcproj", "{F78C41CD-9DEE-4525-9477-6CE7DA119A87}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IXMLParserDLL", "IXMLParserDLL.vcproj", "{E5CF6F2F-A5FC-4CD1-A853-9569CF93A1B1}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IXMLParserTestDLL", "IXMLParserTestDLL.vcproj", "{B5C7EE6D-12EC-4352-8581-120802FF8045}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E5CF6F2F-A5FC-4CD1-A853-9569CF93A1B1} = {E5CF6F2F-A5FC-4CD1-A853-9569CF93A1B1}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IXMLParserUnicode", "IXMLParserUnicode.vcproj", "{28A8FE1C-3CDB-473F-BEF7-8E26E1E06BC4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F78C41CD-9DEE-4525-9477-6CE7DA119A87}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F78C41CD-9DEE-4525-9477-6CE7DA119A87}.Debug|Win32.Build.0 = Debug|Win32
+		{F78C41CD-9DEE-4525-9477-6CE7DA119A87}.Release|Win32.ActiveCfg = Release|Win32
+		{F78C41CD-9DEE-4525-9477-6CE7DA119A87}.Release|Win32.Build.0 = Release|Win32
+		{E5CF6F2F-A5FC-4CD1-A853-9569CF93A1B1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E5CF6F2F-A5FC-4CD1-A853-9569CF93A1B1}.Release|Win32.ActiveCfg = Release|Win32
+		{E5CF6F2F-A5FC-4CD1-A853-9569CF93A1B1}.Release|Win32.Build.0 = Release|Win32
+		{B5C7EE6D-12EC-4352-8581-120802FF8045}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B5C7EE6D-12EC-4352-8581-120802FF8045}.Debug|Win32.Build.0 = Debug|Win32
+		{B5C7EE6D-12EC-4352-8581-120802FF8045}.Release|Win32.ActiveCfg = Release|Win32
+		{B5C7EE6D-12EC-4352-8581-120802FF8045}.Release|Win32.Build.0 = Release|Win32
+		{28A8FE1C-3CDB-473F-BEF7-8E26E1E06BC4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{28A8FE1C-3CDB-473F-BEF7-8E26E1E06BC4}.Debug|Win32.Build.0 = Debug|Win32
+		{28A8FE1C-3CDB-473F-BEF7-8E26E1E06BC4}.Release|Win32.ActiveCfg = Release|Win32
+		{28A8FE1C-3CDB-473F-BEF7-8E26E1E06BC4}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

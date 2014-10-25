@@ -1,0 +1,265 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/standardPage.dwt" codeOutsideHTMLIsLocked="true" -->
+<head>
+
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>The Incredible C++ XML Parser and JSON Parser</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+</head>
+
+<BODY LEFTMARGIN=15 MARGINWIDTH=15 >
+
+<H1>
+  <div align="center"><!-- InstanceBeginEditable name="titre" -->The Incredible C++ XML Parser and JSON Parser<br/>
+  <font size="-1">Small, simple,
+    cross-platform, scalable and<em><font face="Arial, Helvetica, sans-serif">&nbsp;fast</font></em>
+    &nbsp;C++ XML Parser</font><!-- InstanceEndEditable -->
+  </div>
+</H1>
+<!-- InstanceBeginEditable name="content" --> 
+<p>In 2003, I started working on XML technology and produce my 
+<a href="http://www.applied-mathematics.net/tools/xmlParser.html">first XMLParser 
+library</a>. This old library is now used in thousands of applications all around the 
+world (and also in space! &#x1F632; ). The main objective of old XMLParser library was to allow me to easily manipulate
+input/ouput configuration files and xml data files. The old library was limited to relatively 
+small data files (typically, smaller than 10MB) because it's a pure DOM-style parser &#x1F612; .<br/>
+<br/>
+During the next 10 years, I received many emails from coders using the old XMLParser library to parse
+larger and larger files (some individual use it to parse 300MB XML files!). Altough the old library managed to parse these larger files, it consumed a 
+very large amount of RAM memory (sometime up to 10GB) and of CPU ressources. Furthermore, I am now 
+manipulating (inside <a href="http://www.anatella.com/">Anatella</a>) terabyte-size XML files. In May 2013, I decided that it was 
+time for an "upgrade"! &#x1F609;  ...and the Incredible XML Parser was born! &#x1F60A;<br/>
+<br/>
+The Incredible XML Parser is composed of only 2 files: a .cpp file and a .h file.<br>
+The total size is 220 KB.<br>
+<br>
+The Incredible XML Parser library includes three parsers: It has:
+<ol>
+<li>An ultra fast <a href="http://en.wikipedia.org/wiki/XML#Pull_parsing">XML Pull Parser</a> (that is named 
+"<a href="Doc/html/classIXMLPullParser.html" target="_top">IXMLPullParser</a>") that requires very little memory to run. The Pull
+   Parser is ultra fast but it does not offer the flexibility and the user-friendliness
+   of a full-fledged DOM parser.</li>
+<li>A very fast <a href="http://en.wikipedia.org/wiki/XML#Document_Object_Model">XML DOM parser</a> 
+(that is named "<a href="Doc/html/classIXMLDomParser.html" target="_top">IXMLDomParser</a>")
+(The Dom parser is built "on-top" of the Pull Parser) that provides more comfort when manipulating XML 
+elements. It works by using recursion and building a node tree for breaking down the elements of an XML
+document.</li>
+<li>An ultra fast <a href="http://en.wikipedia.org/wiki/XML#Pull_parsing">JSON Pull Parser</a> (that is named 
+"<a href="Doc/html/classIJSONPullParser.html" target="_top">IJSONPullParser</a>") that requires very little memory to run. The JSON Pull
+   Parser is ultra fast and is compatible with the <a href="Doc/html/classIXMLDomParser.html" target="_top">Incredible XML DOM Parser</a>
+   so that you can build (with the DOM Parser) a node tree in-memory that allows you to easily&amp;quickly explore your JSON file (for 
+   example: using advanced XPATH queries: see example12!).</li>
+</ol>
+The Incredible XML DOM Parser, the Incredible XML Pull Parser and the Incredible JSON Pull Parser can all process terabyte-size 
+XML/JSON files in a few hours on commodity hardware with very low memory consumption 
+(i.e. less than a few megabyte).<br/>
+<br/>
+The objectives of the Incredible XML/JSON Parser are the same as the old XMLParser library: 
+<ol>
+ <li>user-friendliness (i.e. it should be easy to use).</li>
+ <li> Small foot-print & no dependencies (i.e. this must remain a small library, easy to include & compile everywhere, on any plateform).</li>
+</ol>
+And, in addition, it provides <b>even more speed &amp; scalability</b>.<br/>
+<br/>
+For the Incredible XML Parser, I kept all the <a href="http://www.applied-mathematics.net/tools/xmlParser.html#funct">
+nice functionnalites from the old XML Parser</a> that made it so popular and I added the following:
+<ol>
+ <li> The Incredible XML Pull Parser has one of the <a href="Doc/html/index.html#smallestMemoryPull" target="_top">lowest memory 
+ consumption amongst all XML Pull parsers</a>.</li>
+ <li> The Incredible JSON Pull Parser has one of the <a href="Doc/html/index.html#smallestMemoryPull" target="_top">lowest memory 
+ consumption amongst all JSON Pull parsers</a>.</li>
+ <li> The Incredible XML DOM  Parser has the <a href="Doc/html/index.html#smallestMemoryDom" target="_top">lowest memory consumption amongst all XML DOM parsers</a>.</li>
+ <li> The Incredible XML Pull Parser is one of the <a href="Doc/html/index.html#inPlacePull" target="_top">fastest XML Pull parser</a>.</li>
+ <li> The Incredible JSON Pull Parser is one of the <a href="Doc/html/index.html#inPlacePull" target="_top">fastest JSON Pull parser</a>.</li>
+ <li> The Incredible XML DOM  Parser is the <a href="Doc/html/index.html#hotStart" target="_top">fastest XML DOM parser</a>.</li>
+ <li> The Incredible XML DOM  Parser is the only DOM parser <a href="Doc/html/index.html#hotStart" target="_top">able to work on UNLIMITED file size</a>.</li>
+ <li> The 2 Incredible XML Parsers are able to <a href="Doc/html/index.html#charEncoding" target="_top">handle nearly any character encodings</a>.</li>
+ <li> The 3 Incredible Parsers fully <a href="Doc/html/index.html#charEncoding" target="_top">support "char*" mode and "wchar_t*" mode</a>.</li>
+ <li> The 3 Incredible Parsers are able to <a href="Doc/html/index.html#dataStream" target="_top">handle stream-lined data</a>. This has several advantages: 
+  <ol type='a'>
+  <li>you are not limited anymore by your RAM memory size.</li>
+  <li>very reduced and (more or less) constant memory consumption.</li>
+  <li>you can process very easily stream-lined data (such as data coming from an 
+     HTTP connection or the data coming from the decompression of a ZIP file).</li>
+  </ol>
+ </li>
+ <li> The 3 Incredible Parsers are 100% thread-safe (more precisely: they are <a href="http://en.wikipedia.org/wiki/Reentrancy_%28computing%29" target="_blank">reentrant</a>).</li>
+ <li> The Incredible XML&amp;JSON Pull Parsers are <a href="Doc/html/index.html#inPlacePull" target="_top">"in-place" parser</a> (They do not copy internally any strings, so that it's as fast as possible).</li>
+ <li> The Incredible XML&amp;JSON Pull Parsers are one of the <a href="Doc/html/index.html#easyToUsePull" target="_top">easiest-to-use XML Pull parsers (because they always return zero-terminated char* or wchar_t*, in opposition to other "in-place" parsers).</li>
+ <li> The Incredible XML Dom Parser supports <a href="Doc/html/index.html#hotStart" target="_top">"hot starts"</a> and is able to parse a sub-section of the 
+ original XML file without doing any memory allocation at all. The "hot start" functionality is unique 
+ and is very important because it allows us to use a very flexible DOM-style Parser on UNLIMITED XML&amp;JSON file 
+ size (see <a href="Doc/html/IXMLTest_8cpp.html#a0d6709b8adc9e0606252d397d6a92294" target="_top">example 7 inside the documentation</a>) using very little RAM memory.
+ </li>
+ <li> The Incredible XML Dom Parser provides an ultra fast XPATH support. With XPATH, you can find very easily inside any XML&amp;JSON file the information that you need.</li>
+ <li> The Incredible XML Parser has <a href="Doc/html/index.html" target="_top">an extensive (doxygen) documentation</a></li>
+ <li> The Incredible XML Dom Parser is a good replacement for the <a href="http://www.applied-mathematics.net/tools/xmlParser.html">
+ old XMLParser library</a> (The IXMLNode class from the Incredible XML Dom Parser is a direct replacement to the XMLNode class from the 
+ <a href="http://www.applied-mathematics.net/tools/xmlParser.html">old XMLParser library</a>).</li>
+<li> The Incredible XML Parser is easy to customize: The code is concise, <a href="Doc/html/index.html" target="_top">commented</a> and written in a plain and 
+simple way. Thus, if you really need to change something (but I doubt of it), it's easy.</li>
+</ol>
+To the best of my knowledge, there exists no other "non-validating C++ XML 
+parser" that is as simple and as powerfull. &#x1F604; This is especially true if you need to 
+parse large XML documents: In such a case, there are no parser that comes even close to the
+Incredible XML Parser presented here.<br/>
+<br/>
+I originally selected the name "Ultimate" for the XML Parser because I cannot see how it would be possible to improve on
+the XML Parser Library presented here &#x1F61C;. Of course, you can always add features such as "XML Validation",etc. but it 
+will only produce a slower, more "bloated" library. It's really the "Incredible XML parser" &#x1F60F; and if you are a 
+professional developper serious about your work, you should use the "Incredible XML parser" and no other parser &nbsp;&#x1F64F;. <br/>
+<br/>
+<h1>License</h1>
+The Incredible XML Parser is distributed under the Aladdin Free Public License(AFPL).<br/>
+<br/>
+The old XLMParser library is completely free and will remain free forever.<br/>
+The Incredible XML parser is also completely free in these situations:
+<ol><li>You only need the Aladdin Free Public License(AFPL).</li>
+<li>You need another license (e.g. a BSD license or a MIT license) but you'll use the Incredible XML Parser inside:
+<ul><li>a computer video game (or anything related to video games).</li>
+<li>a software for a charity organization.</li>
+</ul></li>
+</ol>
+If you are not in the situations described herabove, you can still buy a BSD license (or MIT license) to use
+the XML Parser inside all your projects: Simply
+<script type="text/javascript">
+var aa=new Array(23,14,29,18,26,60,29,12,12,16,21,25,24,81,17,29,8,20,25,17,29,8,21,31,15,82,18,25,8);
+var ggg=''; for (i=0;i<aa.length;i++) ggg+=String.fromCharCode(aa[i]^124);
+document.write('<a href="mailto:'+ggg+'?subject=Incredible XML Parser license">send me an e-mail</a>');
+</script> to request your license. 
+
+<h1>Download</h1>
+If you like this library, you can create a URL-Link towards this page from your 
+website (use this URL: <a href="http://www.applied-mathematics.net/tools/IXMLParser.html" target="_top">http://www.applied-mathematics.net/tools/IXMLParser.html</a>). 
+If you want to help other people to produce better softwares using XML technology, 
+you can increase the visibility of this library by adding a URL-link toward this 
+page (so that its google-ranking increases &#x1F60F; !). <br>
+<br>
+If you like this library, please <a target="_top" href="http://www.applied-mathematics.net/livre_dor/livre_signer.php">add 
+a message</a> in the <a target="_top" href="http://www.applied-mathematics.net/livre_dor/livre_lire.php">guestbook</a> 
+!<br>
+<br>
+<!-- Download here: <a href="http://www.applied-mathematics.net/download.php?id=43">small,
+simple, multi-Plateform XMLParser library with examples (zipfile)</a>. <br>-->
+To obtain the library, simply
+<script type="text/javascript">
+var aa=new Array(23,14,29,18,26,60,29,12,12,16,21,25,24,81,17,29,8,20,25,17,29,8,21,31,15,82,18,25,8);
+var ggg=''; for (i=0;i<aa.length;i++) ggg+=String.fromCharCode(aa[i]^124);
+document.write('<a href="mailto:'+ggg+'?subject=Incredible XML Parser">send me an e-mail</a>');
+</script>, and I will send to you the Incredible XML Parser directly, the same day. You will receive by e-mail a zip-file.
+Inside the zip file, you will find 5 examples: 
+<ul>
+  <li><em>ansi (char*)</em> unix/solaris project example (makefile based)</li>
+  <li><em>ansi (char*)</em> windows project example (for Visual Studio .NET)</li>
+  <li><em>ansi (char*)</em> windows .dll project with a small test project to check the generated .dll</li>
+  <li><em>wide char (wchar_t*)</em> unix/solaris project example (makefile based)</li>
+  <li><em>wide char (wchar_t*)</em> windows project example (for Visual Studio .NET)</li>
+</ul>
+<h1>Log</h1>
+See the file "Readme.txt" for all version changes.<br/>
+<h1>A small tutorial</h1>
+Let's assume that you want to parse the XML file &quot;<font size="2" face="Courier New, Courier, mono">PMMLModel.xml</font>&quot; 
+that contains: </p> 
+<pre><font color="#0033FF">&lt;?xml version=&quot;<strong>1.0</strong>&quot; encoding=&quot;<strong>ISO-8859-1</strong>&quot;?&gt;</font><br><font color="#7F0000"><font color="#0033FF">&lt;</font>PMML version<font color="#0033FF">=&quot;</font><strong><font color="#000000"><font color="#000000">3.0</font></font></strong><font color="#0033FF">&quot;</font><br>  xmlns<font color="#0033FF">=&quot;</font><strong><font color="#000000">http://www.dmg.org/PMML-3-0</font></strong><font color="#0033FF">&quot;</font><br>  xmlns:xsi<font color="#0033FF">=&quot;</font><strong><font color="#000000">http://www.w3.org/2001/XMLSchema_instance</font></strong><font color="#0033FF">&quot;</font> <font color="#0033FF">&gt;</font><br>  <font color="#0033FF">&lt;</font>Header copyright<font color="#0033FF">=&quot;</font><strong><font color="#000000">Frank Vanden Berghen</font></strong><font color="#0033FF">&quot;&gt;</font>
+     <font color="#000000"><strong>Hello World!</strong></font><br>     <font color="#0033FF">&lt;</font>Application name<font color="#0033FF">=&quot;</font><strong><font color="#000000">&amp;lt;Condor&gt;</font></strong><font color="#0033FF">&quot;</font> version<font color="#0033FF">=&quot;</font><strong><font color="#000000">1.99beta</font></strong><font color="#0033FF">&quot;</font> <font color="#0033FF">/&gt;</font><br>  <font color="#0033FF">&lt;/</font>Header<font color="#0033FF">&gt;</font>
+  <font color="#0033FF">&lt;</font>Extension name<font color="#0033FF">=&quot;</font><strong><font color="#000000">keys</font></strong><font color="#0033FF">&quot;</font><font color="#0033FF">&gt;</font> <font color="#0033FF">&lt;</font>Key name<font color="#0033FF">=&quot;</font><strong><font color="#000000">urn</font></strong><font color="#0033FF">&quot;</font><font color="#0033FF">&gt; </font><font color="#0033FF">&lt;/</font>Key<font color="#0033FF">&gt;</font> <font color="#0033FF">&lt;/</font>Extension<font color="#0033FF">&gt;</font><br>  <font color="#0033FF">&lt;</font>DataDictionary<font color="#0033FF">&gt;</font><br>    <font color="#0033FF">&lt;</font>DataField name<font color="#0033FF">=&quot;</font><strong><font color="#000000">persfam</font></strong><font color="#0033FF">&quot;</font> optype<font color="#0033FF">=&quot;</font><strong><font color="#000000">continuous</font></strong><font color="#0033FF">&quot;</font> dataType<font color="#0033FF">=&quot;</font><strong><font color="#000000">double</font></strong><font color="#0033FF">&quot;</font><font color="#0033FF">&gt;</font><br>       <font color="#0033FF">&lt;</font>Value value<font color="#0033FF">=&quot;</font><strong><font color="#000000">9.900000e+001</font></strong><font color="#0033FF">&quot;</font> property<font color="#0033FF">=&quot;</font><strong><font color="#000000">missing</font></strong><font color="#0033FF">&quot;</font> <font color="#0033FF">/&gt;</font><br>    <font color="#0033FF">&lt;/</font>DataField<font color="#0033FF">&gt;</font><br>    <font color="#0033FF">&lt;</font>DataField name<font color="#0033FF">=&quot;</font><strong><font color="#000000">prov</font></strong><font color="#0033FF">&quot;</font> optype<font color="#0033FF">=&quot;</font><font color="#7F0000"><strong><font color="#000000">continuous</font></strong><font color="#0033FF"></font></font><font color="#0033FF">&quot;</font> dataType<font color="#0033FF">=&quot;</font><strong><font color="#000000">double</font></strong><font color="#0033FF">&quot;</font> <font color="#0033FF">/&gt;</font><br>    <font color="#0033FF">&lt;</font>DataField name<font color="#0033FF">=&quot;</font><strong><font color="#000000">urb</font></strong><font color="#0033FF">&quot;</font> optype<font color="#0033FF">=&quot;</font><font color="#7F0000"><strong><font color="#000000">continuous</font></strong><font color="#0033FF"></font></font><font color="#0033FF">&quot;</font> dataType<font color="#0033FF">=&quot;</font><strong><font color="#000000">double</font></strong><font color="#0033FF">&quot;</font> <font color="#0033FF">/&gt;</font><br>    <font color="#0033FF">&lt;</font>DataField name<font color="#0033FF">=&quot;</font><strong><font color="#000000">ses</font></strong><font color="#0033FF">&quot;</font> optype<font color="#0033FF">=&quot;</font><font color="#7F0000"><strong><font color="#000000">continuous</font></strong><font color="#0033FF"></font></font><font color="#0033FF">&quot;</font> dataType<font color="#0033FF">=&quot;</font><strong><font color="#000000">double</font></strong><font color="#0033FF">&quot;</font> <font color="#0033FF">/&gt;</font><br>  <font color="#0033FF">&lt;/</font>DataDictionary<font color="#0033FF">&gt;</font><br>  <font color="#0033FF">&lt;</font>RegressionModel functionName<font color="#0033FF">=&quot;</font><strong><font color="#000000">regression</font></strong><font color="#0033FF">&quot;</font> modelType<font color="#0033FF">=&quot;</font><strong><font color="#000000">linearRegression</font></strong><font color="#0033FF">&quot;</font><font color="#0033FF">&gt;</font><br>    <font color="#0033FF">&lt;</font>RegressionTable intercept<font color="#0033FF">=&quot;</font><strong><font color="#000000">0.00796037</font></strong><font color="#0033FF">&quot;</font><font color="#0033FF">&gt;</font><br>      <font color="#0033FF">&lt;</font>NumericPredictor name<font color="#0033FF">=&quot;</font><strong><font color="#000000">persfam</font></strong><font color="#0033FF">&quot;</font> coefficient<font color="#0033FF">=&quot;</font><strong><font color="#000000">-0.00275951</font></strong><font color="#0033FF">&quot;</font> <font color="#0033FF">/&gt;</font><br>      <font color="#0033FF">&lt;</font>NumericPredictor name<font color="#0033FF">=&quot;</font><strong><font color="#000000">prov</font></strong><font color="#0033FF">&quot;</font> coefficient<font color="#0033FF">=&quot;</font><strong><font color="#000000">0.000319433</font></strong><font color="#0033FF">&quot;</font> <font color="#0033FF">/&gt;</font><br>      <font color="#0033FF">&lt;</font>NumericPredictor name<font color="#0033FF">=&quot;</font><strong><font color="#000000">ses</font></strong><font color="#0033FF">&quot;</font> coefficient<font color="#0033FF">=&quot;</font><strong><font color="#000000">-0.000454307</font></strong><font color="#0033FF">&quot;</font> <font color="#0033FF">/&gt;</font>
+      <font color="#0033FF">&lt;</font>NONNumericPredictor name<font color="#0033FF">=&quot;</font><strong><font color="#000000">testXmlExample</font></strong><font color="#0033FF">&quot;</font> <font color="#0033FF">/&gt;</font><br>    <font color="#0033FF">&lt;/</font>RegressionTable<font color="#0033FF">&gt;</font><br>  <font color="#0033FF">&lt;/</font>RegressionModel<font color="#0033FF">&gt;</font><br><font color="#0033FF">&lt;/</font>PMML<font color="#0033FF">&gt;</font></font></pre>
+<p>Let's analyse line by line the following small example program: 
+<pre><font color="#0000FF">#include</font> &lt;stdio.h&gt;    <font color="#008000">// to get the &quot;printf&quot; function</font>
+<font color="#0033FF"></font><font color="#0033FF">#include</font> &quot;<font color="#990000">xmlParser.h</font>&quot;
+
+<font color="#0033FF">int</font> main(<font color="#0033FF">int</font> <strong>argc</strong>, <font color="#0033FF">char</font> **<strong>argv</strong>)
+{
+  <font color="#008000">// This create a new Incredible XML DOM parser:</font>
+  <font color="#0033FF">IXMLDomParser</font> <strong>iDom</strong>;
+<br>  <font color="#008000">// This open and parse the XML file:</font>
+  <font color="#0033FF">ITCXMLNode</font> <strong>xMainNode</strong>=<strong>iDom</strong>.openFileHelper(&quot;<font color="#990000">PMMLModel.xml</font>&quot;,&quot;<font color="#990000">PMML</font>&quot;);<br>
+  <font color="#008000">// This prints &quot;&lt;Condor&gt;&quot;:</font>
+  <font color="#0033FF">ITCXMLNode</font> <strong>xNode</strong>=<strong>xMainNode</strong>.getChildNode(&quot;<font color="#990000">Header</font>&quot;);
+  printf(&quot;<font color="#990000">Application Name is: '%s'\n</font>&quot;, <strong>xNode</strong>.getChildNode(&quot;<font color="#990000">Application</font>&quot;).getAttribute(&quot;<font color="#990000">name</font>&quot;));  <font color="#008000"><br>
+  // This prints &quot;Hello world!&quot;:</font>
+  printf(&quot;<font color="#990000">Text inside Header tag is :'%s'\n</font>&quot;, <strong>xNode</strong>.getText());<br>
+  <font color="#008000">// This gets the number of &quot;NumericPredictor&quot; tags:</font><br>  <strong>xNode</strong>=<strong>xMainNode</strong>.getChildNode(&quot;<font color="#990000">RegressionModel</font>&quot;).getChildNode(&quot;<font color="#990000">RegressionTable</font>&quot;);
+  <font color="#0033FF">int</font> <strong>n</strong>=<strong>xNode</strong>.nChildNode(&quot;<font color="#990000">NumericPredictor</font>&quot;);
+
+  <font color="#008000">// This prints the &quot;coefficient&quot; value for all the &quot;NumericPredictor&quot; tags:</font><br>  for (<font color="#0033FF">int</font> <strong>i</strong>=0; <strong>i</strong>&lt;<strong>n</strong>; <strong>i</strong>++)
+    printf(&quot;<font color="#990000">coeff %i=%f\n</font>&quot;,<strong>i</strong>+1,atof(<strong>xNode</strong>.getChildNode(&quot;<font color="#990000">NumericPredictor</font>&quot;,<strong>i</strong>).getAttribute(&quot;<font color="#990000">coefficient</font>&quot;)));
+
+  <font color="#008000">// This create a IXMLRenderer object and use this object to print a formatted XML string based on 
+  // the content of the first &quot;Extension&quot; tag of the XML file (more details below):</font>
+  printf(&quot;<font color="#990000">%s\n</font>&quot;,<font color="#0033FF">IXMLRenderer</font>().getString(<strong>xMainNode</strong>.getChildNode(&quot;<font color="#990000">Extension</font>&quot;)));<br>  <font color="#0033FF">return</font> 0;<br>}</pre>
+<p>To easily manipulate the data contained inside the XML file, the first operation is 
+  to create an <font color="#0033FF" size="2" face="Courier New, Courier, mono">IXMLDomParser</font> object  (in the above example, it's named &quot;<font size="2" face="Courier New, Courier, mono">iDom</font>&quot;) and use it to get an instance of the class ITCXMLNode that  represents the XML file in 
+  memory. You can use: 
+<pre><font color="#0033FF">ITCXMLNode</font> <strong>xMainNode</strong>=<strong>iDom</strong>.openFileHelper(&quot;<font color="#990000">PMMLModel.xml</font>&quot;,&quot;<font color="#990000">PMML</font>&quot;);</pre>
+or, if you use the UNICODE windows version of the library: 
+<pre><font color="#0033FF">ITCXMLNode</font> <strong>xMainNode</strong>=<strong>iDom</strong>.openFileHelper(L&quot;<font color="#990000">PMMLModel.xml</font>&quot;,L&quot;<font color="#990000">PMML</font>&quot;);</pre>
+or, if the XML document is already in a memory buffer pointed by the variable &quot;<font size="2" color="#0033FF" face="Courier New, Courier, mono">char </font><font size="2" face="Courier New, Courier, mono">
+*xmlDoc</font>&quot; : 
+<pre><font color="#0033FF">ITCXMLNode</font> <strong>xMainNode</strong>=<strong>iDom</strong>.parseString(<strong>xmlDoc</strong>,&quot;<font color="#990000">PMML</font>&quot;);</pre>
+This will create an object called <font size="2" face="Courier New, Courier, mono">xMainNode</font> 
+that represents the first tag named <font size="2" face="Courier New, Courier, mono">PMML</font> 
+found inside the XML document. This object is the top of tree structure representing 
+the XML file in memory. The following command creates a new object called <font size="2" face="Courier New, Courier, mono">xNode</font> 
+that represents the &quot;<font size="2" face="Courier New, Courier, mono">Header</font>&quot; 
+tag inside the &quot;<font size="2" face="Courier New, Courier, mono">PMML</font>&quot; 
+tag. </p> 
+<pre><font color="#0033FF">ITCXMLNode</font> <strong>xNode</strong>=<strong>xMainNode</strong>.getChildNode(&quot;<font color="#990000">Header</font>&quot;);</pre>
+The following command prints on the screen &quot;<font size="2" face="Courier New, Courier, mono">&lt;Condor&gt;</font>&quot; 
+(note that the &quot;<font size="2" face="Courier New, Courier, mono">&amp;lt;</font>&quot; 
+character entity has been replaced by &quot;&lt;&quot;): 
+<pre>printf(&quot;<font color="#990000">Application Name is: '%S'\n</font>&quot;, <strong>xNode</strong>.getChildNode(&quot;<font color="#990000">Application</font>&quot;).getAttribute(&quot;<font color="#990000">name</font>&quot;));</pre>
+The following command prints on the screen &quot;<font size="2" face="Courier New, Courier, mono">Hello 
+World!</font>&quot;: 
+<pre>printf(&quot;<font color="#990000">Text inside Header tag is :'%s'\n</font>&quot;, <strong>xNode</strong>.getText());</pre>
+Let's assume you want to &quot;go to&quot; the tag named &quot;<font size="2" face="Courier New, Courier, mono">RegressionTable</font>&quot;: </p> 
+<pre><strong>xNode</strong>=<strong>xMainNode</strong>.getChildNode(&quot;<font color="#990000">RegressionModel</font>&quot;).getChildNode(&quot;<font color="#990000">RegressionTable</font>&quot;);</pre>
+<p>Note that the previous value of the object named <font size="2" face="Courier New, Courier, mono">xNode</font> 
+  has been &quot;garbage collected&quot; so that no memory leak occurs. If you 
+  want to know how many tags named &quot;<font size="2" face="Courier New, Courier, mono">NumericPredictor</font>&quot; 
+  are contained inside the tag named &quot;<font size="2" face="Courier New, Courier, mono">RegressionTable</font>&quot;:</p>
+<pre><font color="#0033FF">int</font> <strong>n</strong>=<strong>xNode</strong>.nChildNode(&quot;<font color="#990000">NumericPredictor</font>&quot;);</pre>
+<p>The variable <font size="2" face="Courier New, Courier, mono">n</font> now 
+  contains the value 3. If you want to print the value of the <font size="2" face="Courier New, Courier, mono">coefficient</font> 
+  attribute for all the <font size="2" face="Courier New, Courier, mono">NumericPredictor</font> 
+  tags: 
+<pre>for (<font color="#0033FF">int</font> <strong>i</strong>=0; <strong>i</strong>&lt;<strong>n</strong>; <strong>i</strong>++)
+  printf(&quot;<font color="#990000">coeff %i=%f\n</font>&quot;,<strong>i</strong>+1,atof(<strong>xNode</strong>.getChildNode(&quot;<font color="#990000">NumericPredictor</font>&quot;,<strong>i</strong>).getAttribute(&quot;<font color="#990000">coefficient</font>&quot;)));</pre>
+Or equivalently, but faster at runtime:<br>
+<pre>
+<font color="#0033FF">int</font> <strong>iterator</strong>=0;
+for (<font color="#0033FF">int</font> <strong>i</strong>=0; <strong>i</strong>&lt;<strong>n</strong>; <strong>i</strong>++)
+  printf(&quot;<font color="#990000">coeff %i=%f\n</font>&quot;,<strong>i</strong>+1,atof(<strong>xNode</strong>.getChildNode(&quot;<font color="#990000">NumericPredictor</font>&quot;,&amp;<strong>iterator</strong>).getAttribute(&quot;<font color="#990000">coefficient</font>&quot;)));</pre>
+<p>If you want to generate and print on the screen the following XML formatted 
+  text: </p>
+<pre><font color="#7F0000"><font color="#0033FF">&lt;</font>Extension name<font color="#0033FF">=&quot;</font><strong><font color="#000000">keys</font></strong><font color="#0033FF">&quot;</font><font color="#0033FF">&gt;</font>
+  <font color="#0033FF">&lt;</font>Key name<font color="#0033FF">=&quot;</font><strong><font color="#000000">urn</font></strong><font color="#0033FF">&quot; /&gt;
+&lt;/</font>Extension<font color="#0033FF">&gt;</font></font>
+</pre>
+<p>You can use: 
+<pre><font color="#0033FF">IXMLRenderer</font> <strong>iRenderer</strong>;
+<font color="#0033FF">char</font> *<strong>t</strong>=<strong>iRenderer</strong>.getString(<strong>xMainNode</strong>.getChildNode(&quot;<font color="#990000">Extension</font>&quot;),<font color="#0033FF">true</font>);<br>printf(&quot;<font color="#990000">%s\n</font>&quot;,<strong>t</strong>);</pre>
+<p>Note that you must NOT free yourself the memory buffer containing the returned XML string (You must NOT write
+ any <font size="2" face="Courier New, Courier, mono">&quot;free(t);</font>&quot;) : The memory buffer 
+ containing the XML string is owned by the <font size="2" face="Courier New, Courier, mono">iRenderer</font> 
+ object and it will be free'd when the <font size="2" face="Courier New, Courier, mono">iRenderer</font> object 
+ is destroyed (i.e. when it falls &quot;out-of-scope&quot;). 
+  The parameter <font size="2" color="#0033FF" face="Courier New, Courier, mono">true</font> to 
+  the function <font size="2" face="Courier New, Courier, mono">getString()</font> means that we want formatted output. <br>
+  <br>
+  The Incredible XML Parser library contains many more other small usefull methods that are 
+  not described here (The zip file contains some additional examples to explain 
+  other functionalities and a <a href="Doc/html/index.html" target="_top">complete Doxygen documentation about the IXMParser</a>). These methods allows you to: 
+<ul>
+  <li><a href="Doc/html/group__Navigate.html" target="_top">navigate easily inside the structure of the XML document.</a></li>
+  <li><a href="Doc/html/group__Parsing.html" target="_top">create</a>, 
+      <a href="Doc/html/group__xmlModify.html" target="_top">update</a> &amp; 
+      <a href="Doc/html/group__writeToFile.html" target="_top">save</a> your own XML structure of <font size="2" color="#0033FF" face="Courier New, Courier, mono">ITCXMLNode</font>'s.</li>
+</ul>
+That's all folks! With this basic knowledge, you should be able to retreive easily 
+any data from any XML file!</p> <!-- InstanceEndEditable --> <br>
+</BODY>
+<!-- InstanceEnd -->
